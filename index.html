@@ -243,6 +243,9 @@
   .pick .new{position:absolute;top:-9px;left:10px;background:var(--coral);color:#fff;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.04em;padding:2px 8px;border-radius:999px}
   .pick.mark{opacity:.72;transform:scale(.95);border-style:dashed;border-color:var(--muted);background:#EFE8DA}
   .pick.mark::after{content:"버림";position:absolute;right:10px;top:10px;font-size:12px;font-weight:800;color:var(--coral)}
+  .pick.mark[aria-pressed="true"]{background:#EFE8DA;border-color:var(--muted);transform:scale(.95);box-shadow:none}
+  .pick.mark[aria-pressed="true"] b{color:var(--ink);text-decoration:line-through}
+  .pick.mark[aria-pressed="true"] span{color:var(--muted)}
   .pick.mark b{text-decoration:line-through}
   @keyframes dealin{from{opacity:0;transform:translateY(-34px) rotate(-7deg) scale(.88)}to{opacity:1;transform:none}}
   @keyframes flipin{0%{opacity:0;transform:perspective(500px) rotateY(88deg) scale(.9)}100%{opacity:1;transform:none}}
@@ -252,6 +255,22 @@
   .pick.out{animation:fly .3s ease-in forwards}
   .rules{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin:14px 0 4px}
   .rules b{background:var(--ink);color:var(--paper);border-radius:999px;padding:3px 10px;font-weight:600}
+  /* v4.1: 모바일 한 화면 */
+  #app.game{padding-top:6px;padding-bottom:96px}
+  .game h2{font-size:19px;line-height:1.35}
+  .game .muted{font-size:13.5px;margin:6px 0 0;line-height:1.5}
+  .grid.tight{gap:10px;margin:12px 0 0;grid-auto-rows:1fr}
+  .grid.tight .pick{min-height:0;padding:11px 12px 10px}
+  .grid.tight .pick b{font-size:16px;margin-bottom:2px}
+  .grid.tight .pick span{font-size:12px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .game .tally{margin-bottom:8px}
+  .game .rate{padding:10px 12px;margin-bottom:8px}
+  .game .rate h3{font-size:16px}
+  .game .rate .sub{font-size:12.5px;margin-bottom:6px}
+  .game .scale button{padding:9px 0}
+  .game .opts{margin-top:12px;gap:8px}
+  .game .opt{padding:12px 14px;font-size:15.5px}
+  .game~.dock,.dock{padding-top:18px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "내 일 가치 카드", "url": "https://value-card-rho.vercel.app/", "description": "가치 카드 24장 중 3장만 남기면 나의 일 유형이 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 3분 만에 점검해요. 무료, 가입 없음.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web", "inLanguage": "ko", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "일 가치 카드는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "일에서 중요하게 여기는 가치 24가지를 카드로 만든 자기 점검 도구예요. 카드를 받고 버리며 3장을 남긴 뒤, 지금 직장에서 얼마나 채워지는지 매기면 나의 일 유형과 가장 비어 있는 가치를 알 수 있어요. 3분 정도 걸려요."}}, {"@type": "Question", "name": "심리검사인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 진단이나 상담이 아니라 스스로 생각을 정리하도록 돕는 가벼운 점검 도구예요. 결과는 정답이 아니라 이직 고민을 말로 풀어볼 출발점으로 쓰시면 좋아요. 마음이 많이 힘들다면 전문가와 상담해 보세요."}}, {"@type": "Question", "name": "입력한 내용이 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "선택한 카드와 답변은 서버로 보내지 않고 이 기기의 브라우저에서만 계산돼요. 다만 방문 통계를 위해 Google Analytics로 어떤 화면까지 이용했는지 같은 익명 정보를 수집해요. 자세한 내용은 개인정보처리방침에 있어요."}}, {"@type": "Question", "name": "이직 고민이 감정인지 근거인지 어떻게 알 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "질문 6개의 답에서 감정 신호와 근거 신호를 각각 6점 만점으로 계산해요. 3점 이상이면 높은 쪽으로 보고 네 가지 상태로 나눠요. 통계적으로 검증된 검사가 아니라 가벼운 점검이라, 참고용으로만 봐 주세요."}}, {"@type": "Question", "name": "친구와 결과를 비교할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 결과의 마지막 장에서 공유 링크를 보내면, 친구가 해본 뒤 겹치는 카드 수로 쌍둥이·찰떡·보완·정반대 팀 케미를 볼 수 있어요. 공유되는 건 유형과 카드 3장뿐이고, 고민 상태와 답변은 공유되지 않아요."}}]}]}</script>
@@ -526,9 +545,8 @@ function render(){
     var an0=S.anim; S.anim=false;
     h += '<div class="tally"><span>만난 카드 <b>'+HAND+' / '+TOTAL+'장</b></span><span>남은 덱 <b>'+S.deck.length+'장</b></span></div>'
       + '<h2>카드 '+HAND+'장을 받았어요</h2>'
-      + '<p class="muted" style="margin-top:8px">지금은 이 '+HAND+'장이 내 손패예요. 이제 새 카드가 '+DRAW+'장씩 와요. 필요 없는 카드는 버리고, 끝까지 손에 남은 '+HAND+'장 중 3장을 최종으로 남겨요.</p>'
-      + '<div class="grid">' + S.hand.map(function(id,i){ return gcard(cardById(id),i,(an0?' dealin':''),false,false); }).join("") + '</div>'
-      + '<div class="rules"><b>받기</b>→<b>버리기</b>→'+ROUNDS+'라운드 반복→<b>'+HAND+'장 중 3장</b></div>'
+      + '<p class="muted">이제 새 카드가 '+DRAW+'장씩 와요. 필요 없는 카드는 버리고, 끝까지 남은 '+HAND+'장 중 3장을 골라요.</p>'
+      + '<div class="grid tight">' + S.hand.map(function(id,i){ return gcard(cardById(id),i,(an0?' dealin':''),false,false); }).join("") + '</div>'
       + dock('<button class="btn" data-act="draw">새 카드 받기</button>');
   }
   else if(S.screen==="round"){
@@ -536,9 +554,8 @@ function render(){
     var an1=S.anim; S.anim=false;
     var seen=HAND+DRAW*S.round, nf=0;
     h += '<div class="tally"><span>라운드 <b>'+S.round+' / '+ROUNDS+'</b></span><span>만난 카드 <b>'+seen+' / '+TOTAL+'장</b></span><span>남은 덱 <b>'+S.deck.length+'장</b></span></div>'
-      + '<h2>새 카드 '+DRAW+'장이 왔어요<br>'+S.hand.length+'장 중 '+DRAW+'장을 버려요</h2>'
-      + '<p class="muted" style="margin-top:8px">새 카드를 바로 버려도 괜찮아요. 마지막에 '+HAND+'장이 남아요.</p>'
-      + '<div class="grid">' + S.hand.map(function(id,i){
+      + '<h2>새 카드 '+DRAW+'장 도착! '+DRAW+'장을 버려요</h2>'
+      + '<div class="grid tight">' + S.hand.map(function(id,i){
           var isn=S.fresh.indexOf(id)>-1, mk=S.mark.indexOf(id)>-1, k=isn?nf++:0;
           return gcard(cardById(id),isn?k:i,(isn?' isnew':'')+(mk?' mark':'')+(an1?(isn?' flip':''):''),isn,mk);
         }).join("") + '</div>'
@@ -547,17 +564,16 @@ function render(){
   else if(S.screen==="keep"){
     setProgress(2);
     h += '<h2>5장 중 3장만 남겨요</h2>'
-      + '<p class="muted" style="margin-top:8px">가장 포기하기 어려운 순서대로 눌러주세요. 1번째가 1순위예요.</p>'
-      + '<div class="grid big">' + S.picked.map(function(id){
+      + '<p class="muted">가장 포기하기 어려운 순서대로 눌러요. 다시 누르면 취소돼요.</p>'
+      + '<div class="grid big tight">' + S.picked.map(function(id){
           var r=S.ranked.indexOf(id)+1; return cardBtn(cardById(id), r>0, r||0);
         }).join("") + '</div>'
-      + '<p class="fine">잘못 눌렀다면 카드를 다시 눌러 취소할 수 있어요.</p>'
       + dock('<div class="count">'+S.ranked.length+' / 3장</div><div class="row"><button class="btn ghost" data-act="back-pick">카드 다시 받기</button><button class="btn" data-act="keepdone"'+(S.ranked.length===3?'':' disabled')+'>다음</button></div>');
   }
   else if(S.screen==="rate"){
     setProgress(3);
     h += '<h2>지금 직장에서<br>얼마나 채워지고 있나요?</h2>'
-      + '<p class="muted" style="margin:8px 0 18px">1은 거의 비어 있고, 5는 충분히 채워진다는 뜻이에요.</p>';
+      + '<p class="muted" style="margin:6px 0 12px">1은 거의 비어 있고, 5는 충분히 채워진다는 뜻이에요.</p>';
     S.ranked.forEach(function(id,i){
       var c=cardById(id), cur=S.rates[id]||0;
       h += '<div class="rate"><h3>'+(i+1)+'순위 · '+c.n+'</h3><div class="sub">'+c.t+'</div><div class="scale" role="group" aria-label="'+c.n+' 충족도">'
@@ -652,6 +668,9 @@ function render(){
   if(render._k!==sk && S.screen!=="result"){ app.classList.remove("enter"); void app.offsetWidth; app.classList.add("enter"); }
   render._k=sk;
   var ab=document.getElementById("about"); if(ab) ab.hidden = (S.screen!=="intro");
+  var inGame=/^(deal|round|keep|rate|q|loading)$/.test(S.screen);
+  app.classList.toggle("game", inGame);
+  var ft=document.querySelector("footer"); if(ft) ft.hidden=inGame;
   var fq=document.getElementById("faq"); if(fq) fq.hidden = (S.screen!=="result");
   if(S.screen==="result"){
     S.slide = 0; paintDock();
