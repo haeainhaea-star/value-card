@@ -1,0 +1,5 @@
+# 모든 검색 로봇과 AI 검색 로봇의 접근을 허용해요.
+User-agent: *
+Allow: /
+
+Sitemap: https://value-card-rho.vercel.app/sitemap.xml

@@ -3,11 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>내 일 가치 카드 — 이직 고민, 내 기준부터</title>
-<meta name="description" content="24장의 가치 카드 중 5장을 고르고, 지금의 이직 고민이 감정에 가까운지 근거에 가까운지 3분 만에 살펴봐요.">
-<meta property="og:title" content="내 일 가치 카드 — 이직 고민, 내 기준부터">
-<meta property="og:description" content="카드 5장을 고르고 3분이면 내 이직 고민의 정체를 볼 수 있어요.">
+<title>일 가치관 테스트: 내 일 캐릭터와 이직 고민 점검 | 내 일 가치 카드</title>
+<meta name="description" content="가치 카드 24장 중 5장을 고르면 나만의 일 캐릭터가 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 3분 만에 점검해요. 무료, 가입 없음.">
+<meta name="keywords" content="일 가치관 테스트, 직업 가치관, 이직 고민 테스트, 이직할까 말까, 가치 카드, 밸류카드, 직장 고민">
+<link rel="canonical" href="https://value-card-rho.vercel.app/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<!-- 검색엔진 소유확인: 서치콘솔/네이버 서치어드바이저에서 받은 코드를 아래 content에 넣고 주석을 푸세요 -->
+<!-- <meta name="google-site-verification" content="여기에_구글_코드"> -->
+<!-- <meta name="naver-site-verification" content="여기에_네이버_코드"> -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="내 일 가치 카드">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://value-card-rho.vercel.app/">
+<meta property="og:title" content="나는 어떤 일 캐릭터일까? — 내 일 가치 카드">
+<meta property="og:description" content="카드 5장 고르고 질문 6개면 끝. 이직 고민이 감정인지 근거인지도 같이 점검해요.">
+<meta property="og:image" content="https://value-card-rho.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="나는 어떤 일 캐릭터일까? — 내 일 가치 카드">
+<meta name="twitter:description" content="카드 5장 고르고 질문 6개면 끝. 이직 고민이 감정인지 근거인지도 같이 점검해요.">
+<meta name="twitter:image" content="https://value-card-rho.vercel.app/og.png">
 <meta name="theme-color" content="#F4EEE3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,20 +185,45 @@
   .shuffle i:nth-child(2){animation-delay:.18s;background:#FFF3EE}
   .shuffle i:nth-child(3){animation-delay:.36s;background:var(--ink)}
   .load p{font-family:"Noto Serif KR",serif;font-size:18px}
+
+  .about{border-top:1px solid var(--rule);margin-top:34px;padding-top:26px}
+  .about h2{margin-bottom:10px}
+  .about h3{margin:22px 0 6px}
+  .about details{border-bottom:1px solid var(--rule);padding:12px 0}
+  .about summary{cursor:pointer;font-weight:600}
+  .about details p{margin:8px 0 0;color:var(--muted)}
+  .about .cards24{columns:2;column-gap:18px;margin:8px 0 0;padding:0;list-style:none;font-size:14px}
+  .about .cards24 li{break-inside:avoid;margin-bottom:6px}
+  .about .cards24 b{font-family:"Noto Serif KR",serif}
+  footer a{color:inherit}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "내 일 가치 카드", "url": "https://value-card-rho.vercel.app/", "description": "가치 카드 24장 중 5장을 고르면 나만의 일 캐릭터가 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 3분 만에 점검해요. 무료, 가입 없음.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web", "inLanguage": "ko", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "일 가치 카드는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "일에서 중요하게 여기는 가치 24가지를 카드로 만든 자기 점검 도구예요. 카드 5장을 고르고 3장을 남긴 뒤, 지금 직장에서 얼마나 채워지는지 매기면 나의 일 캐릭터와 가장 비어 있는 가치를 알 수 있어요. 3분 정도 걸려요."}}, {"@type": "Question", "name": "심리검사인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 진단이나 상담이 아니라 스스로 생각을 정리하도록 돕는 가벼운 점검 도구예요. 결과는 정답이 아니라 이직 고민을 말로 풀어볼 출발점으로 쓰시면 좋아요. 마음이 많이 힘들다면 전문가와 상담해 보세요."}}, {"@type": "Question", "name": "입력한 내용이 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "선택한 카드와 답변은 서버로 보내지 않고 이 기기의 브라우저에서만 계산돼요. 다만 방문 통계를 위해 Google Analytics로 어떤 화면까지 이용했는지 같은 익명 정보를 수집해요. 자세한 내용은 개인정보처리방침에 있어요."}}, {"@type": "Question", "name": "이직 고민이 감정인지 근거인지 어떻게 알 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "질문 6개의 답에서 감정 신호와 근거 신호를 각각 6점 만점으로 계산해요. 3점 이상이면 높은 쪽으로 보고 네 가지 상태로 나눠요. 통계적으로 검증된 검사가 아니라 가벼운 점검이라, 참고용으로만 봐 주세요."}}, {"@type": "Question", "name": "친구와 결과를 비교할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 결과의 마지막 장에서 공유 링크를 보내면, 친구가 해본 뒤 겹치는 카드 수로 쌍둥이·찰떡·보완·정반대 팀 케미를 볼 수 있어요. 공유되는 건 캐릭터와 카드 3장뿐이고, 고민 상태와 답변은 공유되지 않아요."}}]}]}</script>
 </head>
 <body>
 
 <div class="bar"><div class="bar-in"><span class="brand">내 일 가치 카드</span><div class="track" aria-hidden="true"><i id="prog"></i></div></div></div>
 
 <div class="wrap">
-  <main id="app" tabindex="-1" aria-live="polite"></main>
+  <main id="app" tabindex="-1" aria-live="polite"><noscript><p>이 페이지는 자바스크립트가 켜져 있어야 이용할 수 있어요. 내 일 가치 카드는 가치 카드 24장 중 5장을 고르고 질문 6개에 답하면 나의 일 캐릭터와 이직 고민의 상태를 점검해주는 무료 도구예요.</p></noscript></main>
+
+  <section class="about" id="about" aria-labelledby="about-h">
+    <h2 id="about-h">내 일 가치 카드란?</h2>
+    <p>이직을 고민할 때 가장 먼저 필요한 건 "나는 일에서 무엇을 놓치고 싶지 않은가"를 아는 거예요. 내 일 가치 카드는 일에서 중요한 가치 24가지를 카드로 만들어, 나의 우선순위와 지금 직장에서 가장 비어 있는 가치를 보여주는 무료 점검 도구예요.</p>
+    <h3>이렇게 진행돼요</h3>
+    <ol class="list"><li>카드 24장 중 5장을 고르고, 3장만 순서대로 남겨요.</li><li>남긴 카드가 지금 직장에서 얼마나 채워지는지 1~5점으로 매겨요.</li><li>질문 6개에 답하면 나의 일 캐릭터, 가장 비어 있는 카드, 감정과 근거 신호를 알려드려요.</li></ol>
+    <h3>일 가치 카드 24장</h3>
+    <ul class="cards24"><li><b>성장</b> 배우고 있고 실력이 느는 느낌</li><li><b>보상</b> 내 기여만큼 받는다는 감각</li><li><b>안정</b> 쉽게 흔들리지 않는 기반</li><li><b>자율</b> 내 방식대로 일을 정하는 힘</li><li><b>인정</b> 해낸 일이 알려지고 존중받는 것</li><li><b>사람</b> 함께하는 사람들과의 좋은 관계</li><li><b>의미</b> 이 일이 누군가에게 쓸모 있다는 느낌</li><li><b>워라밸</b> 일 밖의 시간과 에너지</li><li><b>도전</b> 어려운 문제를 푸는 긴장감</li><li><b>비전</b> 우리가 가는 방향에 대한 믿음</li><li><b>전문성</b> 한 분야에서 깊이를 쌓는 것</li><li><b>영향력</b> 내 일로 실제 결과가 바뀌는 것</li><li><b>공정</b> 기준과 평가가 납득되는 것</li><li><b>소속감</b> 여기가 내 자리라는 느낌</li><li><b>창의</b> 새로운 걸 만들어내는 즐거움</li><li><b>리더십</b> 사람과 방향을 이끄는 역할</li><li><b>유연함</b> 시간과 장소를 스스로 조절하는 것</li><li><b>명성</b> 이름만 대도 알아주는 곳에서 일하는 것</li><li><b>재미</b> 일하는 시간이 즐거운 것</li><li><b>정직</b> 말과 행동이 일치하는 조직</li><li><b>회복</b> 지쳐도 다시 충전할 수 있는 리듬</li><li><b>독립</b> 언젠가 내 일을 할 수 있는 길</li><li><b>커리어</b> 다음 자리로 이어지는 이력</li><li><b>가족</b> 소중한 사람을 위한 시간과 여유</li></ul>
+    <h3>자주 묻는 질문</h3>
+    <details><summary>일 가치 카드는 무엇인가요?</summary><p>일에서 중요하게 여기는 가치 24가지를 카드로 만든 자기 점검 도구예요. 카드 5장을 고르고 3장을 남긴 뒤, 지금 직장에서 얼마나 채워지는지 매기면 나의 일 캐릭터와 가장 비어 있는 가치를 알 수 있어요. 3분 정도 걸려요.</p></details><details><summary>심리검사인가요?</summary><p>아니요. 진단이나 상담이 아니라 스스로 생각을 정리하도록 돕는 가벼운 점검 도구예요. 결과는 정답이 아니라 이직 고민을 말로 풀어볼 출발점으로 쓰시면 좋아요. 마음이 많이 힘들다면 전문가와 상담해 보세요.</p></details><details><summary>입력한 내용이 저장되나요?</summary><p>선택한 카드와 답변은 서버로 보내지 않고 이 기기의 브라우저에서만 계산돼요. 다만 방문 통계를 위해 Google Analytics로 어떤 화면까지 이용했는지 같은 익명 정보를 수집해요. 자세한 내용은 개인정보처리방침에 있어요.</p></details><details><summary>이직 고민이 감정인지 근거인지 어떻게 알 수 있나요?</summary><p>질문 6개의 답에서 감정 신호와 근거 신호를 각각 6점 만점으로 계산해요. 3점 이상이면 높은 쪽으로 보고 네 가지 상태로 나눠요. 통계적으로 검증된 검사가 아니라 가벼운 점검이라, 참고용으로만 봐 주세요.</p></details><details><summary>친구와 결과를 비교할 수 있나요?</summary><p>네. 결과의 마지막 장에서 공유 링크를 보내면, 친구가 해본 뒤 겹치는 카드 수로 쌍둥이·찰떡·보완·정반대 팀 케미를 볼 수 있어요. 공유되는 건 캐릭터와 카드 3장뿐이고, 고민 상태와 답변은 공유되지 않아요.</p></details>
+    <p class="fine" style="margin-top:14px">마지막 업데이트: 2026년 10월 10일</p>
+  </section>
 
   <!-- 광고 자리: 광고 승인 후 여기에 코드를 넣어요. 비어 있으면 숨겨져요. -->
   <aside id="ad-slot"></aside>
 
   <footer>
+    <p><a href="/privacy.html">개인정보처리방침</a></p>
     <p>자기 점검용 참고 도구이며 진단·상담이 아니에요. 선택한 내용은 서버로 보내지 않고 이 기기에서만 계산돼요.</p>
     <!--SAFETY-LINE-START--><p>마음이 많이 힘들다면 자살예방상담전화 109(24시간)에 연락해 보세요.</p><!--SAFETY-LINE-END-->
   </footer>
@@ -190,7 +232,7 @@
 
 <script>
 // ===== 설정 =====
-var GA_ID = "";            // 예: "G-XXXXXXXXXX" (비워두면 분석 꺼짐)
+var GA_ID = "G-KV4YJ5H5L9"; // Google Analytics 측정 ID (비워두면 분석 꺼짐)
 var SITE_NAME = "내 일 가치 카드";
 
 // ==LOGIC-START==
@@ -514,6 +556,7 @@ function render(){
       + '<div class="dock"><div class="dock-in" id="rdock"></div></div>';
   }
   app.innerHTML = h;
+  var ab=document.getElementById("about"); if(ab) ab.hidden = (S.screen!=="intro");
   if(S.screen==="result"){
     S.slide = 0; paintDock();
     var st2=document.getElementById("story");
