@@ -196,6 +196,31 @@
   .about .cards24 li{break-inside:avoid;margin-bottom:6px}
   .about .cards24 b{font-family:"Noto Serif KR",serif}
   footer a{color:inherit}
+
+  /* v3: inside-compass 참고 반영 */
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--coral);margin-bottom:8px}
+  .explain{border-left:3px solid var(--coral);padding:2px 0 2px 14px;margin-top:16px;color:var(--muted)}
+  .explain p{margin:0}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+  .flow span{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--rule);border-radius:999px;padding:6px 14px 6px 7px;font-size:13.5px;font-weight:600;line-height:1.3}
+  .flow b{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:12px;display:grid;place-items:center}
+  .step{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--coral);margin-bottom:6px}
+  .gap{border-left:5px solid var(--coral);border-radius:6px 14px 14px 6px;background:linear-gradient(125deg,#FFF3EE,#FFF9F2 70%)}
+  .act{position:relative;overflow:hidden;background:var(--ink);color:var(--paper);border-radius:16px;padding:22px 20px}
+  .act::after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(244,238,227,.16);border-radius:50%;right:-70px;top:-95px;pointer-events:none}
+  .act .step{color:var(--gold)}
+  .act .first{font-family:"Noto Serif KR",serif;font-weight:700;font-size:19px;line-height:1.5;margin:0 0 14px}
+  .act ul.list{color:#E8E2D4;margin-bottom:14px}
+  .act .btn.ghost{color:var(--paper);border-color:rgba(244,238,227,.55)}
+  .reveal{background:radial-gradient(circle at 92% 8%,rgba(232,184,75,.2),transparent 42%),var(--ink)}
+  .reveal::after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(244,238,227,.14);border-radius:50%;right:-90px;bottom:-110px;pointer-events:none}
+  .btn{box-shadow:0 3px 0 -1px rgba(29,43,58,.22);transition:transform .15s,box-shadow .15s}
+  .btn.ghost,.btn:disabled{box-shadow:none}
+  .btn:active,.opt:active,.scale button:active,.fb button:active{transform:translateY(1px) scale(.98)}
+  .opt,.scale button,.fb button{transition:transform .12s,background .15s,border-color .15s}
+  .opt[aria-pressed="true"]{box-shadow:0 4px 0 -2px rgba(217,87,59,.35)}
+  @keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  #app.enter>:not(.dock){animation:enter .22s ease-out backwards}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "내 일 가치 카드", "url": "https://value-card-rho.vercel.app/", "description": "가치 카드 24장 중 5장을 고르면 나만의 일 캐릭터가 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 3분 만에 점검해요. 무료, 가입 없음.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web", "inLanguage": "ko", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "일 가치 카드는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "일에서 중요하게 여기는 가치 24가지를 카드로 만든 자기 점검 도구예요. 카드 5장을 고르고 3장을 남긴 뒤, 지금 직장에서 얼마나 채워지는지 매기면 나의 일 캐릭터와 가장 비어 있는 가치를 알 수 있어요. 3분 정도 걸려요."}}, {"@type": "Question", "name": "심리검사인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 진단이나 상담이 아니라 스스로 생각을 정리하도록 돕는 가벼운 점검 도구예요. 결과는 정답이 아니라 이직 고민을 말로 풀어볼 출발점으로 쓰시면 좋아요. 마음이 많이 힘들다면 전문가와 상담해 보세요."}}, {"@type": "Question", "name": "입력한 내용이 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "선택한 카드와 답변은 서버로 보내지 않고 이 기기의 브라우저에서만 계산돼요. 다만 방문 통계를 위해 Google Analytics로 어떤 화면까지 이용했는지 같은 익명 정보를 수집해요. 자세한 내용은 개인정보처리방침에 있어요."}}, {"@type": "Question", "name": "이직 고민이 감정인지 근거인지 어떻게 알 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "질문 6개의 답에서 감정 신호와 근거 신호를 각각 6점 만점으로 계산해요. 3점 이상이면 높은 쪽으로 보고 네 가지 상태로 나눠요. 통계적으로 검증된 검사가 아니라 가벼운 점검이라, 참고용으로만 봐 주세요."}}, {"@type": "Question", "name": "친구와 결과를 비교할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 결과의 마지막 장에서 공유 링크를 보내면, 친구가 해본 뒤 겹치는 카드 수로 쌍둥이·찰떡·보완·정반대 팀 케미를 볼 수 있어요. 공유되는 건 캐릭터와 카드 3장뿐이고, 고민 상태와 답변은 공유되지 않아요."}}]}]}</script>
@@ -440,10 +465,9 @@ function render(){
     if(S.friend){
       h += '<div class="banner">친구의 일 캐릭터: <b>'+charOf(S.friend[0]).c+'</b><br>나는 어떤 캐릭터일까요? 해보고 나면 서로의 케미도 볼 수 있어요.</div>';
     }
-    h += '<h1>나는 어떤<br>일 캐릭터일까?</h1>'
-      + '<p class="muted" style="margin-top:14px">가치 카드 24장 중 5장을 고르면 나만의 일 캐릭터가 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 같이 살펴봐요.</p>'
-      + '<div class="sec" style="margin-top:20px"><ol class="list" style="padding-left:20px;margin:0">'
-      + '<li>카드 5장을 고르고 3장만 남겨요</li><li>그 카드가 지금 직장에서 얼마나 채워지는지 매겨요</li><li>질문 6개에 답하면 캐릭터와 결과가 공개돼요</li></ol></div>'
+    h += '<div class="eyebrow">가치 카드 24장 · 3분 안팎</div><h1>나는 어떤<br>일 캐릭터일까?</h1>'
+      + '<div class="explain"><p>가치 카드 24장 중 5장을 고르면 나만의 일 캐릭터가 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 같이 살펴봐요.</p></div>'
+      + '<div class="flow" aria-label="진행 순서"><span><b>1</b>카드 5장 고르고 3장 남기기</span><span><b>2</b>지금 얼마나 채워지는지 매기기</span><span><b>3</b>질문 6개</span></div>'
       + '<p class="fine" style="margin-top:16px">가입·로그인 없이, 선택은 이 기기에서만 계산돼요.</p>'
       + dock('<button class="btn" data-act="start">카드 고르러 가기</button>');
   }
@@ -480,7 +504,7 @@ function render(){
   else if(S.screen==="q"){
     setProgress(4+S.q);
     var Q=QUESTIONS[S.q], cur=S.ans[S.q];
-    h += '<div class="qn">질문 '+(S.q+1)+' / '+QUESTIONS.length+'</div><h2>'+Q.q+'</h2><div class="opts">'
+    h += '<div class="qn">질문 '+(S.q+1)+' / '+QUESTIONS.length+(S.q===QUESTIONS.length-1?' · 마지막이에요':'')+'</div><h2>'+Q.q+'</h2><div class="opts">'
       + Q.o.map(function(o,i){return '<button class="opt" data-act="ans" data-i="'+i+'" aria-pressed="'+(cur===i)+'">'+o.t+'</button>';}).join("")
       + '</div>'
       + dock('<button class="btn ghost" data-act="back-q">이전</button>');
@@ -513,7 +537,7 @@ function render(){
     var gp;
     if(R.allFilled) gp='세 카드 모두 비교적 채워지고 있어요. 그렇다면 고민의 이유는 이 카드들 밖(최근의 사건이나 피로, 다른 가치)에 있을 수 있어요.';
     else gp='<b>'+gc.n+'</b> 카드가 가장 비어 있어요(충족도 '+S.rates[gc.id]+'/5). '+gc.e+'.';
-    sl.push('<h2>고민의 정체일 수 있는 카드</h2><div class="gap" style="margin-top:14px">'+gp+'</div>');
+    sl.push('<h2>고민의 정체일 수 있는 카드</h2><div class="gap" style="margin-top:14px"><span class="step">발견</span>'+gp+'</div>');
 
     // 5. 감정 vs 근거
     sl.push('<h2>지금 고민은 어느 쪽에 가까울까요</h2><div class="state" style="margin-top:12px">'+st.label+'</div><p>'+st.intro+'</p>'
@@ -530,8 +554,10 @@ function render(){
     else if(R.key==="LH") acts.push('사실로 쌓인 불만 중, 회사 안에서 바꿔볼 수 있는 것 1개 골라 말해보기');
     else acts.push('일주일 동안 "'+cs[0].n+'"이 채워진 순간을 메모해보기');
     acts.push('7일 뒤에 이 카드를 다시 열어서 달라진 점이 있는지 보기');
-    sl.push('<h2>다음 걸음</h2><ul class="list" style="margin-top:12px">'+acts.map(function(t){return '<li>'+t+'</li>';}).join("")+'</ul>'
-      + '<button class="btn ghost small" style="margin-top:12px" data-act="ics">7일 뒤 알림 캘린더에 담기</button>');
+    sl.push('<h2>다음 걸음</h2><div class="act" style="margin-top:14px"><span class="step">'+(!R.allFilled?'이번 주 한 걸음':'먼저 해볼 것')+'</span>'
+      + '<p class="first">'+acts[0].replace(/^이번 주 한 걸음: /,'')+'</p>'
+      + '<ul class="list">'+acts.slice(1).map(function(t){return '<li>'+t+'</li>';}).join("")+'</ul>'
+      + '<button class="btn ghost small" data-act="ics">7일 뒤 알림 캘린더에 담기</button></div>');
 
     // 7. 공유 / 케미 / 피드백
     var last='';
@@ -556,6 +582,9 @@ function render(){
       + '<div class="dock"><div class="dock-in" id="rdock"></div></div>';
   }
   app.innerHTML = h;
+  var sk=S.screen+":"+(S.screen==="q"?S.q:"");
+  if(render._k!==sk && S.screen!=="result"){ app.classList.remove("enter"); void app.offsetWidth; app.classList.add("enter"); }
+  render._k=sk;
   var ab=document.getElementById("about"); if(ab) ab.hidden = (S.screen!=="intro");
   if(S.screen==="result"){
     S.slide = 0; paintDock();
