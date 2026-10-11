@@ -25,7 +25,7 @@
 <meta name="twitter:title" content="나는 어떤 일 유형일까? — 내 일 가치 카드">
 <meta name="twitter:description" content="카드를 받고 버리며 3장만 남기면 끝. 이직 고민이 감정인지 근거인지도 같이 점검해요.">
 <meta name="twitter:image" content="https://value-card-rho.vercel.app/og.png">
-<meta name="theme-color" content="#F4EEE3">
+<meta name="theme-color" content="#0d0b1e">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -289,6 +289,73 @@
   .slide details:not(.tg){border-bottom:1px solid var(--rule);padding:10px 0}
   .slide details:not(.tg) summary{cursor:pointer;font-weight:600}
   .slide details:not(.tg) p{margin:8px 0 0;color:var(--muted);font-size:14.5px}
+
+  /* v5: aurora glass (dark) */
+  :root{--paper:#0d0b1e;--card:rgba(255,255,255,.09);--ink:#fff;--muted:rgba(255,255,255,.7);--rule:rgba(255,255,255,.2);--coral:#ff6fa5;--gold:#ffd27a;--ok:#4fe0c0;--on:#14112b;--glass:rgba(255,255,255,.1);--edge:rgba(255,255,255,.22)}
+  html{background:#0d0b1e;color-scheme:dark}
+  body{background:transparent;position:relative}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(520px 420px at 0% 0%,#5b3df5 0,transparent 62%),radial-gradient(420px 420px at 105% 32%,#ff5fa2 0,transparent 58%),radial-gradient(540px 420px at 35% 105%,#18c7b5 0,transparent 62%),#0d0b1e}
+  .bar{background:transparent}
+  .track{background:rgba(255,255,255,.18)}
+  .track i{background:linear-gradient(90deg,#ff6fa5,#ffd27a)}
+  .btn{background:#fff;color:var(--on);border-radius:999px;padding:17px 18px;font-weight:800;box-shadow:0 8px 24px -8px rgba(0,0,0,.45)}
+  .btn:disabled{background:rgba(255,255,255,.22);color:rgba(255,255,255,.5);box-shadow:none}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);box-shadow:none}
+  .btn.small{padding:12px 14px}
+  .dock{background:linear-gradient(rgba(13,11,30,0),rgba(13,11,30,.82) 38%)}
+  .pick,.rate,.opt,.get,.tally span,.flow span,details.tg,.fit>div,.cmp,.banner,.pager,.fb button,.scale button{
+    background:var(--glass);border:1px solid var(--edge);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+  .pick,.opt,.rate,.cmp,.fit>div,.banner,details.tg,.get{border-radius:20px}
+  .pick{color:#fff}
+  .pick span,.rate .sub,.opt{color:var(--muted)}
+  .opt{color:#fff}
+  .pick[aria-pressed="true"]{background:#fff;border-color:#fff;box-shadow:0 10px 26px -10px rgba(255,255,255,.55)}
+  .pick[aria-pressed="true"] b{color:var(--on)}
+  .pick[aria-pressed="true"] span{color:#4a4668}
+  .pick.isnew{border-color:var(--coral);background:rgba(255,111,165,.16)}
+  .pick.isnew[aria-pressed="true"]{background:#fff}
+  .pick.mark,.pick.mark[aria-pressed="true"]{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.35);opacity:.5;box-shadow:none}
+  .pick.mark[aria-pressed="true"] b,.pick.mark b{color:#fff;text-decoration:line-through}
+  .pick.mark[aria-pressed="true"] span{color:var(--muted)}
+  .pick.mark::after{color:#ff9fc4}
+  .scale button,.fb button{color:#fff;border-radius:12px}
+  .scale button[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:#fff}
+  .fb button[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:var(--on)}
+  .opt[aria-pressed="true"]{border-color:var(--coral);background:rgba(255,111,165,.2);box-shadow:none}
+  .gap{background:linear-gradient(125deg,rgba(255,111,165,.2),rgba(255,111,165,.06));border:1px solid rgba(255,111,165,.5);border-left:5px solid var(--coral)}
+  .gap b{color:#ff9fc4}
+  .cmp{border:1px dashed rgba(255,255,255,.45)}
+  .fit .g{border-color:rgba(79,224,192,.7)}.fit .x{border-color:rgba(255,111,165,.7)}
+  .reveal{background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.06));border:1px solid var(--edge);border-radius:28px;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+  .reveal::before{border-color:rgba(255,255,255,.14)}
+  .reveal::after{border-color:rgba(255,255,255,.12)}
+  .mod{color:rgba(255,255,255,.75)}.reveal .d{color:rgba(255,255,255,.85)}
+  .quote{background:rgba(255,255,255,.1)}
+  .act{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.05));border:1px solid var(--edge);border-radius:26px;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+  .act::after{border-color:rgba(255,255,255,.14)}
+  .act .btn.ghost{color:#fff}
+  .meter .t{background:rgba(255,255,255,.16)}
+  .meter .t i{background:linear-gradient(90deg,#ff6fa5,#ffd27a)}
+  .meter.v .t i{background:linear-gradient(90deg,#4fe0c0,#7aa8ff)}
+  .pager{background:rgba(255,255,255,.14);border-radius:999px}
+  .pd::before{background:rgba(255,255,255,.35)}
+  .pd.on::before{background:#fff}
+  .state{background:#fff;color:var(--on)}
+  .shuffle i{background:rgba(255,255,255,.12);border:1px solid var(--edge);box-shadow:none}
+  .shuffle i:nth-child(2){background:rgba(255,111,165,.3)}
+  .shuffle i:nth-child(3){background:#fff}
+  .toast{background:#fff;color:var(--on)}
+  .eyebrow,.step,.qn,.chem{color:#ff9fc4}
+  .act .step,.kick,.steps b{color:var(--gold)}
+  .explain{border-left-color:var(--coral)}
+  .flow b{background:#fff;color:var(--on)}
+  .rules b,.state{background:#fff;color:var(--on)}
+  .typ{color:#fff;background:linear-gradient(90deg,#fff,#ffd5e6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .fan .c{background:rgba(255,255,255,.12);border:1px solid var(--edge);box-shadow:none}
+  h1{letter-spacing:-.04em}
+  a{color:inherit}
+  #app.game .pick{padding:12px 13px 11px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "내 일 가치 카드", "url": "https://value-card-rho.vercel.app/", "description": "가치 카드 24장 중 3장만 남기면 나의 일 유형이 나와요. 이직 고민이 감정에 가까운지 근거에 가까운지도 3분 만에 점검해요. 무료, 가입 없음.", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web", "inLanguage": "ko", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "일 가치 카드는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "일에서 중요하게 여기는 가치 24가지를 카드로 만든 자기 점검 도구예요. 카드를 받고 버리며 3장을 남긴 뒤, 지금 직장에서 얼마나 채워지는지 매기면 나의 일 유형과 가장 비어 있는 가치를 알 수 있어요. 3분 정도 걸려요."}}, {"@type": "Question", "name": "심리검사인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 진단이나 상담이 아니라 스스로 생각을 정리하도록 돕는 가벼운 점검 도구예요. 결과는 정답이 아니라 이직 고민을 말로 풀어볼 출발점으로 쓰시면 좋아요. 마음이 많이 힘들다면 전문가와 상담해 보세요."}}, {"@type": "Question", "name": "입력한 내용이 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "선택한 카드와 답변은 서버로 보내지 않고 이 기기의 브라우저에서만 계산돼요. 다만 방문 통계를 위해 Google Analytics로 어떤 화면까지 이용했는지 같은 익명 정보를 수집해요. 자세한 내용은 개인정보처리방침에 있어요."}}, {"@type": "Question", "name": "이직 고민이 감정인지 근거인지 어떻게 알 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "질문 6개의 답에서 감정 신호와 근거 신호를 각각 6점 만점으로 계산해요. 3점 이상이면 높은 쪽으로 보고 네 가지 상태로 나눠요. 통계적으로 검증된 검사가 아니라 가벼운 점검이라, 참고용으로만 봐 주세요."}}, {"@type": "Question", "name": "친구와 결과를 비교할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 결과의 마지막 장에서 공유 링크를 보내면, 친구가 해본 뒤 겹치는 카드 수로 쌍둥이·찰떡·보완·정반대 팀 케미를 볼 수 있어요. 공유되는 건 유형과 카드 3장뿐이고, 고민 상태와 답변은 공유되지 않아요."}}]}]}</script>
@@ -771,31 +838,32 @@ function makeImage(){
     var go2 = function(){
       var W=1080,H=1350, cv=document.createElement("canvas"); cv.width=W; cv.height=H;
       var x=cv.getContext("2d"), ch=charOf(S.ranked[0]);
-      x.fillStyle="#1D2B3A"; x.fillRect(0,0,W,H);
-      x.strokeStyle="rgba(244,238,227,.4)"; x.lineWidth=3; x.strokeRect(40,40,W-80,H-80);
+      x.fillStyle="#0d0b1e"; x.fillRect(0,0,W,H);
+      [[0,0,900,"#5b3df5"],[W,420,820,"#ff5fa2"],[W*0.35,H,900,"#18c7b5"]].forEach(function(a){var g=x.createRadialGradient(a[0],a[1],0,a[0],a[1],a[2]);g.addColorStop(0,a[3]);g.addColorStop(1,"rgba(13,11,30,0)");x.fillStyle=g;x.fillRect(0,0,W,H);});
+      x.strokeStyle="rgba(255,255,255,.28)"; x.lineWidth=3; x.strokeRect(40,40,W-80,H-80);
       x.textAlign="center";
-      x.fillStyle="#E8B84B"; x.font='600 34px "Pretendard Variable",Pretendard,sans-serif'; x.fillText("나의 일 유형은",W/2,170);
-      x.fillStyle="#F4EEE3"; x.font='700 92px "Pretendard Variable",Pretendard,sans-serif';
+      x.fillStyle="#ffd27a"; x.font='600 34px "Pretendard Variable",Pretendard,sans-serif'; x.fillText("나의 일 유형은",W/2,170);
+      x.fillStyle="#fff"; x.font='700 92px "Pretendard Variable",Pretendard,sans-serif';
       var nm=ch.c, fs=92; while(x.measureText(nm).width>W-160 && fs>50){ fs-=4; x.font='700 '+fs+'px "Pretendard Variable",Pretendard,sans-serif'; }
       x.fillText(nm,W/2,300);
-      x.fillStyle="#C9D1DA"; x.font='500 34px "Pretendard Variable",Pretendard,sans-serif';
+      x.fillStyle="rgba(255,255,255,.8)"; x.font='500 34px "Pretendard Variable",Pretendard,sans-serif';
       wrapText(x,ch.d,W/2,376,W-220,50,2);
-      x.fillStyle="#F4EEE3"; x.font='600 36px "Pretendard Variable",Pretendard,sans-serif';
+      x.fillStyle="#fff"; x.font='600 36px "Pretendard Variable",Pretendard,sans-serif';
       x.fillText("“"+ch.q+"”",W/2,520);
       var cw=270, chh=380, gap=26, startX=(W-(cw*3+gap*2))/2, top=620;
       S.ranked.forEach(function(id,i){
         var c=cardById(id), cx=startX+i*(cw+gap);
         x.save(); x.translate(cx+cw/2, top+chh/2); x.rotate((i-1)*0.06); x.translate(-cw/2,-chh/2);
-        x.fillStyle="#FFFDF8"; x.fillRect(0,0,cw,chh);
-        x.textAlign="center"; x.fillStyle="#D9573B"; x.font='700 56px "Pretendard Variable",Pretendard,sans-serif'; x.fillText(String(i+1),cw/2,86);
-        x.fillStyle="#1D2B3A"; x.font='700 50px "Pretendard Variable",Pretendard,sans-serif'; x.fillText(c.n,cw/2,200);
-        x.fillStyle="#667180"; x.font='500 25px "Pretendard Variable",Pretendard,sans-serif';
+        x.fillStyle="rgba(255,255,255,.95)"; x.fillRect(0,0,cw,chh);
+        x.textAlign="center"; x.fillStyle="#ff6fa5"; x.font='700 56px "Pretendard Variable",Pretendard,sans-serif'; x.fillText(String(i+1),cw/2,86);
+        x.fillStyle="#14112b"; x.font='700 50px "Pretendard Variable",Pretendard,sans-serif'; x.fillText(c.n,cw/2,200);
+        x.fillStyle="#4a4668"; x.font='500 25px "Pretendard Variable",Pretendard,sans-serif';
         wrapText(x,c.t,cw/2,262,cw-44,36,3);
         x.restore();
       });
-      x.textAlign="center"; x.fillStyle="#F4EEE3"; x.font='600 42px "Pretendard Variable",Pretendard,sans-serif';
+      x.textAlign="center"; x.fillStyle="#fff"; x.font='600 42px "Pretendard Variable",Pretendard,sans-serif';
       x.fillText("너는 어떤 일 유형이야?",W/2,1130);
-      x.fillStyle="#C9D1DA"; x.font='500 30px "Pretendard Variable",Pretendard,sans-serif';
+      x.fillStyle="rgba(255,255,255,.8)"; x.font='500 30px "Pretendard Variable",Pretendard,sans-serif';
       x.fillText(location.host+location.pathname.replace(/\/$/,""),W/2,1190);
       cv.toBlob(function(b){resolve(b);},"image/png");
     };
