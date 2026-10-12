@@ -776,7 +776,7 @@ function render(){
     });
   }
 }
-var CONTACT_URL="";  // 카카오톡 오픈채팅(1:1) 링크 (비워두면 숨김)
+var CONTACT_URL="https://open.kakao.com/o/sGFONZRi";  // 카카오톡 오픈채팅(1:1) 링크 (비워두면 숨김)
 function creatorBlock(){
   if(!CONTACT_URL) return "";
   return '<div class="sec creator"><h3>만든 사람과 이야기하기</h3><p class="muted" style="font-size:14px">불편했던 점이나 하고 싶은 이야기가 있다면 편하게 남겨주세요. (전문 상담이 아니라 의견을 듣는 창구예요.)</p><a class="btn ghost small" data-act="contact" href="'+CONTACT_URL+'" target="_blank" rel="noopener">오픈채팅으로 이야기하기</a></div>';
